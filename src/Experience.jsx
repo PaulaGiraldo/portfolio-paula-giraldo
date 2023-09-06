@@ -1,4 +1,4 @@
-import { OrbitControls } from "@react-three/drei";
+import { Center, OrbitControls } from "@react-three/drei";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 
@@ -15,7 +15,6 @@ const Experience = () => {
         <OrbitControls makeDefault />
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={2} />
-
         <mesh ref={boxRef}position-x={-3}>
             <boxGeometry args={[1, 1, 1]} />
             <meshLambertMaterial color={"#472836"} />
@@ -32,7 +31,6 @@ const Experience = () => {
             <torusGeometry/>
             <meshToonMaterial color={"#ff7d00"}/>
         </mesh>
-        
     </>
 }
 export default Experience;

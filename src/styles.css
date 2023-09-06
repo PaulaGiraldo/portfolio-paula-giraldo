@@ -11,3 +11,8 @@ body,
 canvas{
     touch-action: none;
 }
+.info{
+    position: absolute;
+    z-index: -1;
+    background: rgb(243, 1, 1);
+}
