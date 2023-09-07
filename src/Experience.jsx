@@ -1,4 +1,4 @@
-import { Center, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 
@@ -9,6 +9,10 @@ const Experience = () => {
     const sphereRef = useRef();
     useFrame((state, delta) => {
         boxRef.current.rotation.x += 1 * delta;
+        torusRef.current.position.y = Math.sin(state.clock.getElapsedTime());
+        coneRef.current.position.y = Math.sin(state.clock.getElapsedTime());
+        coneRef.current.rotation.x = Math.cos(state.clock.getElapsedTime());
+        sphereRef.current.position.x = Math.sin(state.clock.getElapsedTime()) + 2;
     });
 
     return <>
