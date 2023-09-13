@@ -1,12 +1,14 @@
 import { OrbitControls } from "@react-three/drei";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
+import { Flower } from "./world/Flower";
 
 const Experience = () => {
     const boxRef = useRef();
     const coneRef = useRef();
     const torusRef = useRef();
     const sphereRef = useRef();
+
     useFrame((state, delta) => {
         boxRef.current.rotation.x += 1 * delta;
         torusRef.current.position.y = Math.sin(state.clock.getElapsedTime());
@@ -19,7 +21,7 @@ const Experience = () => {
         <OrbitControls makeDefault />
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={2} />
-        <mesh ref={boxRef}position-x={-3}>
+        <mesh ref={boxRef} position-x={-3}>
             <boxGeometry args={[1, 1, 1]} />
             <meshLambertMaterial color={"#472836"} />
         </mesh>
@@ -29,12 +31,17 @@ const Experience = () => {
         </mesh>
         <mesh ref={sphereRef} position-x={2} >
             <sphereGeometry args={[1, 32, 64]} />
-            <meshPhongMaterial color={"#ffecd1"}/>
+            <meshPhongMaterial color={"#ffecd1"} />
         </mesh>
         <mesh ref={torusRef} position-x={6} >
-            <torusGeometry/>
-            <meshToonMaterial color={"#ff7d00"}/>
+            <torusGeometry />
+            <meshToonMaterial color={"#ff7d00"} />
         </mesh>
+        <mesh position-y={-3} rotation-x={-Math.PI / 2} >
+            <planeGeometry attach="geometry" args={[17, 17]} />
+            <meshStandardMaterial attach="material" color={"#108d17"} />
+        </mesh>
+        <Flower/>
     </>
 }
 export default Experience;
