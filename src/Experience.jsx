@@ -1,7 +1,9 @@
 import { OrbitControls } from "@react-three/drei";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Flower } from "./world/Flower";
+import { Flower } from "./world/models/Flower";
+import { Floor } from "./world/models/Floor";
+import { Fox } from "./world/models/Fox";
 
 const Experience = () => {
     const boxRef = useRef();
@@ -37,11 +39,9 @@ const Experience = () => {
             <torusGeometry />
             <meshToonMaterial color={"#ff7d00"} />
         </mesh>
-        <mesh position-y={-3} rotation-x={-Math.PI / 2} >
-            <planeGeometry attach="geometry" args={[17, 17]} />
-            <meshStandardMaterial attach="material" color={"#108d17"} />
-        </mesh>
+        <Floor/>
         <Flower/>
+        <Fox/>
     </>
 }
 export default Experience;
