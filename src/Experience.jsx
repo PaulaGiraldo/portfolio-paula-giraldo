@@ -4,6 +4,7 @@ import { useFrame } from "@react-three/fiber";
 import { Flower } from "./world/models/Flower";
 import { Floor } from "./world/models/Floor";
 import { Fox } from "./world/models/Fox";
+import Lights from "./world/Lights";
 
 const Experience = () => {
     const boxRef = useRef();
@@ -21,8 +22,7 @@ const Experience = () => {
 
     return <>
         <OrbitControls makeDefault />
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 5]} intensity={2} />
+        <Lights/>
         <mesh ref={boxRef} position-x={-3}>
             <boxGeometry args={[1, 1, 1]} />
             <meshLambertMaterial color={"#472836"} />

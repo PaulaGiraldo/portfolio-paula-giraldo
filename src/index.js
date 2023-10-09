@@ -12,7 +12,7 @@ root.render(
             bio = {"2022411"}
         />
         <Canvas
-            camera={{ position: [1, 0, 9] }}
+            camera={{ position: [3, 0, 13] }}
         >
             <Experience />
         </Canvas>
