@@ -6,6 +6,8 @@ import { Floor } from "./world/models/Floor";
 import { Fox } from "./world/models/Fox";
 import Lights from "./world/Lights";
 import Environments from "./world/Environment";
+import WelcomeText from "./world/WelcomeText";
+import { Signs } from "./world/models/Signs";
 
 const Experience = () => {
     const boxRef = useRef();
@@ -42,8 +44,11 @@ const Experience = () => {
             <meshToonMaterial color={"#ff7d00"} />
         </mesh>
         <Floor/>
-        <Flower/>
+        <Flower>
+            <WelcomeText />
+        </Flower>
         <Fox/>
+        <Signs/>
         <Environments/>
     </>
 }

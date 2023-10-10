@@ -139,6 +139,7 @@ export function Flower(props) {
           material={materials["dark green"]}
         />
       </group>
+      {props.children}
     </group>
   );
 }
