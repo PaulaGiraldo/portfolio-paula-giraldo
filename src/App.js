@@ -5,8 +5,8 @@ import Info from "./info"
 const App = () => {
     // Camera settings
     const cameraSettings = {
-        position:[ 3, 0, 13],
-        fov: 60
+        position:[ 5, 2, 13],
+        fov: 80
     }
 
     return (
@@ -16,6 +16,7 @@ const App = () => {
             bio = {"2022411"}
         />
         <Canvas
+            shadows
             camera={cameraSettings}
         >
             <Experience />

@@ -14,7 +14,13 @@ export function Fox() {
     })
 
     return (
-        <mesh  ref={foxRef} position-x={4} position-y={-2.7} position-z={4} rotation-y={-Math.PI * 0.15} scale={0.04}>
+        <mesh  
+            ref={foxRef} 
+            castShadow
+            position-x={4} 
+            position-y={-2.7} position-z={4} 
+            rotation-y={-Math.PI * 0.15} 
+            scale={0.04}>
             <primitive object={foxModel.scene} />
         </mesh>
     )
