@@ -2,7 +2,7 @@ import { Center, Float, Html, Text, Text3D } from "@react-three/drei"
 import { useEffect } from "react";
 import { Color } from "three";
 
-const WelcomeText = (props) => {
+const WelcomeText = ({text}) => {
     return (
         /*<Html position={[0,3,0]} center distanceFactor = {40} occlude>
             <h2 className="welcome-text"> Welcome </h2>
@@ -17,7 +17,7 @@ const WelcomeText = (props) => {
             <Center position-y={3}>
                 <Text3D
                     font="/assets/fonts/LilitaOne_Regular.json">
-                    {"WELCOME!"}
+                    {text}
                     <meshNormalMaterial/>
                 </Text3D>
             </Center>

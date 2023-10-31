@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber"
-import Experience from "./Experience"
-import Info from "./info"
+import Experience from "./world/Experience"
+import Info from "./Info/info"
 
 const App = () => {
     // Camera settings

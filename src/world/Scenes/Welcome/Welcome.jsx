@@ -1,15 +1,13 @@
-import { BakeShadows, ContactShadows, OrbitControls } from "@react-three/drei";
+import { Suspense } from "react";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Flower } from "./world/models/Flower";
-import { Floor } from "./world/models/Floor";
-import { Fox } from "./world/models/Fox";
-import Lights from "./world/Lights";
-import Environments from "./world/Environment";
-import WelcomeText from "./world/WelcomeText";
-import { Signs } from "./world/models/Signs";
+import {Fox} from "./Models/Fox"
+import {Flower} from "./Models/Flower"
+import {Floor} from "./Models/Floor";
+import {Signs} from "./Models/Signs";
+import WelcomeText from "./Text/WelcomeText";
 
-const Experience = () => {
+const Welcome = () => {
     const boxRef = useRef();
     const coneRef = useRef();
     const torusRef = useRef();
@@ -23,11 +21,9 @@ const Experience = () => {
         sphereRef.current.position.x = Math.sin(state.clock.getElapsedTime()) + 2;
     });
 
-    return <>
-        <OrbitControls makeDefault />
-        <Lights/>
-        <BakeShadows />
-        <mesh castShadow ref={boxRef} position-x={-3} position-z={-15}>
+    return (
+        <>
+              <mesh castShadow ref={boxRef} position-x={-3} position-z={-15}>
             <boxGeometry args={[1, 1, 1]} />
             <meshLambertMaterial color={"#472836"} />
         </mesh>
@@ -49,7 +45,8 @@ const Experience = () => {
         </Flower>
         <Fox/>
         <Signs/>
-        <Environments/>
-    </>
+        </>
+    )
 }
-export default Experience;
+
+export default Welcome;
