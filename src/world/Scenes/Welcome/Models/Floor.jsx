@@ -1,5 +1,7 @@
 import { useTexture } from "@react-three/drei";
-import { Color } from "three";
+import { RigidBody } from "@react-three/rapier";
+import { Color, RepeatWrapping, Vector2 } from "three";
+
 export function Floor() {
     const PATH = "/assets/textures/grass/"
     const propsTexture = useTexture({
@@ -10,13 +12,16 @@ export function Floor() {
 
     })
 
+    propsTexture.repeat = new Vector2(64, 64);
     propsTexture.emissive = new Color("#228B22");
     propsTexture.emissiveIntensity = 0.1;
     
     return(
-        <mesh position-y={-3} rotation-x={-Math.PI / 2} receiveShadow>
-                <planeGeometry attach="geometry" args={[100, 100]} />
-                <meshStandardMaterial { ... propsTexture} />
-        </mesh>
+        <RigidBody type="fixed">
+            <mesh position-y={-3} rotation-x={-Math.PI / 2} receiveShadow>
+                    <planeGeometry attach="geometry" args={[64, 64, 100, 100]} />
+                    <meshStandardMaterial { ... propsTexture} />
+            </mesh>
+        </RigidBody>
     )
 }
