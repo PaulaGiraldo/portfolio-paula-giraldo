@@ -5,6 +5,7 @@ import {Fox} from "./Models/Fox"
 import {Flower} from "./Models/Flower"
 import {Floor} from "./Models/Floor";
 import {Signs} from "./Models/Signs";
+import {Mush} from "./Models/Mush";
 import WelcomeText from "./Text/WelcomeText";
 
 const Welcome = () => {
@@ -45,6 +46,7 @@ const Welcome = () => {
         </Flower>
         <Fox/>
         <Signs/>
+        <Mush/>
         </>
     )
 }
